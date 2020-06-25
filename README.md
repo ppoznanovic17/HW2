@@ -1,4 +1,5 @@
-Domaci 2
+
+<b>SRB </b>
 Igra izvlacenja 6 stapica gde je jedan stapic kraci. Sto broji 6 mesta za igrace. Za stolom stoji krupije koji vodi igru. N igraca periodicno ulazi u prostoriju u intervalima X ( 0<= x <=1 sekunde) i sedaju za sto ako ima mesta. 
 
 Ukoliko je sto pun, igrac izlazi iz prostorije. Nakon sto se sto popuni, partija pocinje. Sto je okrugao i svako mesto je numerisano (od 1 do 6). 
