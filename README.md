@@ -1,9 +1,27 @@
 
-The assignment
-N students approach homework defense (each defense process is performed in a separate thread). The defense is held by a professor and an assistant. Each student defends the task at his own pace (a random value in the range of 0.5 <= x <= 1 second). The assistant is able to examine only one student while the professor is able to monitor two defenses simultaneously. Each student comes to defense for a period of time (a random value in the range of 0 < x <= 1 second from the start of the defense term). Defense term lasts 5 seconds. The defense that has been started must be interrupted by the moment when the term of defense is completed.
+# The assignment
+A game of drawing 6 sticks where one stick is shorter. The table has 6 seats for 6 players. There is a croupier at the table running the game. N players periodically enter the room at x intervals (0 <= x <= 1 second) and sit down if there is available seat.
 
-The professor will not accept to examine only one student, instead, he'll wait two students who are ready to defend and then start exammining both, simultaneously, until both are finished.
+If all seats are taken, the player leaves the room. After the table is full, the game begins. The table is round and each place is numbered (1 to 6).
 
-Each student, upon completion of his defense, must refresh the sum of the grades of all students by adding his own. These grades will be divided by the number of students that finnished defending, and this result should be printed in the console at the end of the defense term.
+The first round begins with the first player to draw the stick out of the croupier's hand. Before drawing a stick, all other players guess at one of two outcomes (did the player draw a shorter or a regular stick).
 
-The professor can examine exactly two students while the assistant can examine exactly one. It must not happen that the same student defends the homework twice. It should not happen that a student defends homework after the end of the defense term, even if it began before the defense term end. It should not happen that the professor and the assistant examine the same student.
+Only the croupier is aware of which stick is shorter. After all players have made their predictions, the first player draws a stick. Depending on the outcome, players get one point if their prediction was correct.
+
+If a player drew a short stick, he leaves the table and the game starts from the beginning. If he has drawn a normal stick then the game goes to the next round. So one party can have macximum 6 rounds.
+
+M rounds are played before the croupier shows who is the player with most points.
+
+# Rules
+There must be two console applications:
+
+one for the croupier - it'll have ServerSocket in it
+second one for the players - it'll have one thread for each player opening socket connection
+All messages between client (players) and server (croupier) must be in JSON format.
+
+Both applications should run on the same computer in localhost.
+
+Each player should have their own UUID.
+
+# How to run program
+First, start the server (ServerMain class), and type in maximum number of rounds. Then, start the clients (ClientMain class), and type in total number of players
